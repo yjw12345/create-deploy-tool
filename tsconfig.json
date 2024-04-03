@@ -1,10 +1,23 @@
 {
-  "extends": "@tsconfig/node20/tsconfig.json",
+  // "extends": "@tsconfig/node20/tsconfig.json",
   "include": ["index.ts", "utils/**/*"],
   "compilerOptions": {
     "strict": false,
     "resolveJsonModule": true,
     "moduleResolution": "Bundler",
     "module": "ESNext"
-  }
+  },
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "_version": "20.1.0",
+
+  // "compilerOptions": {
+  //   "lib": ["es2023"],
+  //   "module": "node16",
+  //   "target": "es2022",
+
+  //   "strict": true,
+  //   "esModuleInterop": true,
+  //   "skipLibCheck": true,
+  //   "moduleResolution": "node16"
+  // }
 }
