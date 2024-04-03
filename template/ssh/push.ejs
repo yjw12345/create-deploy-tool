@@ -3,13 +3,13 @@ const client = require('scp2');
 const ssh2 = require('ssh2');
 
 const { Client } = ssh2;
-// unzip -o -d /clothing/vue/dist /clothing/vue/dist.zip
+
 const server = {
   path: '<%- filePath %>', // 项目路径
-  host: '183.56.232.130', // 服务器ip
+  host: '<%- severIP %>', // 服务器ip
+  username: '<%- username %>', // 用户名
+  password: '<%- password %>', // 密码
   port: '22', // 端口一般默认22
-  username: 'root', // 用户名
-  password: 'itaem04008!', // 密码
   locaPath: './dist.zip', // 本地dist压缩包
 };
 const conn = new Client();
