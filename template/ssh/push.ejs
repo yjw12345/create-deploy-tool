@@ -5,10 +5,10 @@ const ssh2 = require('ssh2');
 const { Client } = ssh2;
 
 const server = {
-  path: '<%- filePath %>', // 项目路径
   host: '<%- severIP %>', // 服务器ip
   username: '<%- username %>', // 用户名
   password: '<%- password %>', // 密码
+  path: '<%- filePath %>', // 项目路径
   port: '22', // 端口一般默认22
   locaPath: './dist.zip', // 本地dist压缩包
 };
