@@ -66,9 +66,9 @@ async function init() {
   // 复制git
 
   // 复制zip.js文件
-  const pushGitCommitPath = path.resolve(templateRoot, './template/git/commit.js')
+  const pushGitCommitPath = path.resolve(templateRoot, './template/git/commit.cjs')
   const pushGitCommitStr = fs.readFileSync(pushGitCommitPath)
-  fs.writeFileSync(path.resolve(projectRoot, './scripts/commit.js'), pushGitCommitStr)
+  fs.writeFileSync(path.resolve(projectRoot, './scripts/commit.cjs'), pushGitCommitStr)
   // 更新package.json
   mergePackageJSON(path.resolve(templateRoot, './template/git/package.json'), path.resolve(projectRoot, './package.json'))
   // 更新依赖
