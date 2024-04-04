@@ -22,8 +22,6 @@ const editGitCommit = () => {
             console.log(`Git 提交成功： ${stdout}`);
             // 不加close，则不会结束question
             r1.close();
-            // 结束所有进程
-            end();
         });
     });
 };
