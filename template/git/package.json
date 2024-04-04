@@ -1,8 +1,6 @@
 {
     "scripts": {
-        "commit": "zx ./scripts/commit.js"
-    },
-    "devDependencies": {
-        "zx": "^7.2.3"
-    }
+        "commit": "node ./scripts/commit.cjs",
+        "push": "npm run deploy && npm run commit"
+      }
 }

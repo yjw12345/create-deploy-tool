@@ -4,6 +4,6 @@
         "archiver": "^6.0.1"
     },
     "scripts": {
-        "push": "npm run build && node ./config/zip.js && node ./config/push.js"
+        "deploy": "npm run build && node ./config/zip.js && node ./config/push.js"
       }
 }

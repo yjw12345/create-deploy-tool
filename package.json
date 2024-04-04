@@ -1,6 +1,6 @@
 {
   "name": "create-deploy-tool",
-  "version": "1.0.11",
+  "version": "1.0.17",
   "description": "to automation deploy your project",
   "main": "index.js",
   "type": "module",
@@ -8,11 +8,11 @@
     "prepare": "husky",
     "test": "zx ./scripts/build.mjs && zx ./outfile.cjs",
     "build": "zx ./scripts/build.mjs",
-    "publish": "zx ./scripts/build.mjs && npm publish",
-    "publish-patch": "zx ./scripts/publish.js patch && npm run publish",
-    "publish-minor": "zx ./scripts/publish.js minor && npm run publish",
-    "publish-major": "zx ./scripts/publish.js major && npm run publish",
-    "commit": "zx ./scripts/commit.js"
+    "publish-patch": "zx ./scripts/updateVersion.cjs patch && zx ./scripts/build.mjs && npm publish",
+    "publish-minor": "zx ./scripts/updateVersion.cjs minor && zx ./scripts/build.mjs && npm publish",
+    "publish-major": "zx ./scripts/updateVersion.cjs major && zx ./scripts/build.mjs && npm publish",
+    "commit": "node ./scripts/commit.cjs",
+    "push": "npm run publish-patch && npm run commit"
   },
   "bin": {
     "create-deploy-tool": "outfile.cjs"
