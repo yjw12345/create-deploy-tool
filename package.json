@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "prepare": "husky",
     "test": "zx ./scripts/build.mjs && zx ./outfile.cjs",
     "build": "zx ./scripts/build.mjs",
     "publish": "zx ./scripts/build.mjs && npm publish",
