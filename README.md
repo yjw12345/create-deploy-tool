@@ -1,15 +1,6 @@
-### 发布流程
-
-发布的时候需要更换npm下载地址
-
-**设置npm默认源：**
-
-npm config set registry https://registry.npmjs.org/
-
-**更换回淘宝下载源：**
-
-npm config set registry https://registry.npmmirror.com
-
-**发布**
-
-npm publish
+### 使用介绍
+本项目脚手架做无件事情
+- 收集部署项目的地址，部署文件地址，用户名，密码
+- 将收集到的信息使用ejs填充推送的脚本，克隆打包脚本。将两份脚本都放在项目下面的config文件夹
+- 更新package.json，增加ssh2和archiver的库，分别是用于推送和打包的库
+- 使用npm install命令重新下载
