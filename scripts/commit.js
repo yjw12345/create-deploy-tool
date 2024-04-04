@@ -12,13 +12,12 @@ const editGitCommit = () => {
     r1.question('输入提交的内容\t', (inpt) => {
         console.log('提交中......');
         exec(`git add . && git commit -m "${inpt}" && git push`, (error, stdout, stderr) => {
+            console.log(error, stdout, stderr);
             if (error) {
                 console.error(`执行命令时出错： ${error.message}`);
-                return;
             }
             if (stderr) {
                 console.error(`命令执行错误： ${stderr}`);
-                return;
             }
             console.log(`Git 提交成功： ${stdout}`);
             // 不加close，则不会结束question
