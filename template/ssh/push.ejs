@@ -14,8 +14,20 @@ const server = {
 };
 const conn = new Client();
 
-console.log('正在建立连接');
 // 建立连接的
+const conn = new Client();
+console.log('正在建立连接');
+
+// 检测是否存在该目录，如果没有该目录就创建
+const checkDirectory = () => {
+  conn.exec(`mkdir ${server.path}`, (err, stream) => {
+    stream.on('close', () => {
+      // 上传
+      rimraf();
+    });
+  })
+}
+
 // 删除文件
 const rimraf = () => {
   conn.exec(`rm -rf ${server.path}/*`, (err, stream) => {
@@ -26,6 +38,7 @@ const rimraf = () => {
     });
   });
 };
+
 // 上传
 const upload = () => {
   client.scp(
@@ -48,6 +61,7 @@ const upload = () => {
     },
   );
 };
+
 // 解压
 const unzip = () => {
   conn.exec(`unzip -o -d ${server.path}/dist ${server.path}/dist.zip`, (err, stream) => {
@@ -59,11 +73,13 @@ const unzip = () => {
     });
   });
 };
+
 // 结束运行
 const end = () => {
   conn.end();
   process.exit();
 };
+
 conn
   .on('ready', () => {
     console.log('已连接');

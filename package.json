@@ -1,12 +1,17 @@
 {
   "name": "create-deploy-tool",
-  "version": "1.0.8",
+  "version": "1.0.11",
   "description": "to automation deploy your project",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "zx ./scripts/build.mjs && zx ./outfile.cjs",
-    "build": "zx ./scripts/build.mjs"
+    "build": "zx ./scripts/build.mjs",
+    "publish": "zx ./scripts/build.mjs && npm publish",
+    "publish-patch": "zx ./scripts/publish.js patch && npm run publish",
+    "publish-minor": "zx ./scripts/publish.js minor && npm run publish",
+    "publish-major": "zx ./scripts/publish.js major && npm run publish",
+    "commit": "zx ./scripts/commit.js"
   },
   "bin": {
     "create-deploy-tool": "outfile.cjs"

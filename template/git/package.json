@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "commit": "zx ./scripts/commit.js"
+    },
+    "devDependencies": {
+        "zx": "^7.2.3"
+    }
+}

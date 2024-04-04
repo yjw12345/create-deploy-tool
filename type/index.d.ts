@@ -3,4 +3,5 @@ type ServeInfomation = {
     severIP?: number
     username?: string
     password?: string
+    commit?: boolean
 }
