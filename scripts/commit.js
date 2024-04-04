@@ -11,7 +11,7 @@ const editGitCommit = () => {
     // 调用接口方法
     r1.question('输入提交的内容\t', (inpt) => {
         console.log('提交中......');
-        exec(`git add . && git commit --no-verify -m "${inpt}" && git push`, (error, stdout, stderr) => {
+        exec(`git add . && git commit -m "${inpt}" && git push`, (error, stdout, stderr) => {
             if (error) {
                 console.error(`执行命令时出错： ${error.message}`);
                 return;
