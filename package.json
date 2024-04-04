@@ -1,6 +1,6 @@
 {
-  "name": "yjw-deploy-tool",
-  "version": "1.0.1",
+  "name": "create-deploy-tool",
+  "version": "1.0.8",
   "description": "to automation deploy your project",
   "main": "index.js",
   "type": "module",
@@ -9,10 +9,9 @@
     "build": "zx ./scripts/build.mjs"
   },
   "bin": {
-    "create-vue": "outfile.cjs"
+    "create-deploy-tool": "outfile.cjs"
   },
   "files": [
-    "locales",
     "outfile.cjs",
     "template"
   ],
@@ -28,6 +27,7 @@
     "@vue/tsconfig": "^0.5.1",
     "ejs": "^3.1.9",
     "esbuild": "^0.18.20",
+    "execa": "^5.1.1",
     "esbuild-plugin-license": "^1.2.2",
     "husky": "^9.0.11",
     "kolorist": "^1.8.0",
@@ -45,5 +45,6 @@
     ]
   },
   "author": "YJW",
-  "license": "ISC"
+  "license": "ISC",
+  "homepage": "https://github.com/yjw12345/deploy"
 }
