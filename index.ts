@@ -81,7 +81,9 @@ async function init() {
 init()
 
 const mergePackageJSON = (templateDest: string, projectDest: string) => {
-  const templatePackageJson = JSON.parse(fs.readFileSync(templateDest, 'utf-8'))
+  const existFlag = fs.existsSync(templateDest)
+
+  const templatePackageJson = existFlag ? JSON.parse(fs.readFileSync(templateDest, 'utf-8')) : {}
   const projectPackageJson = JSON.parse(fs.readFileSync(projectDest, 'utf-8'))
   deepMerge(templatePackageJson, projectPackageJson)
   fs.writeFileSync(projectDest, JSON.stringify(projectPackageJson, null, 2) + '\n')
