@@ -28,9 +28,11 @@ export const renderTemplate = (src: string, dest: string, serverInformation: Ser
         return
     }
     if (filename.endsWith('.ejs')) {
+        console.log(dest.replace(/\.ejs$/, ''));
         ejs.renderFile(src, serverInformation, null, (_, str) => {
-            fs.writeFileSync(dest, str, {})
+            fs.writeFileSync(dest.replace(/\.ejs$/, ''), str, {})
         })
+        return
     }
     fs.copyFileSync(src, dest)
 }

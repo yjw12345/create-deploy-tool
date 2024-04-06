@@ -82,7 +82,7 @@ conn
   .on('ready', () => {
     console.log('已连接');
     // 解压
-    rimraf();
+    checkDirectory();
     return null;
   })
   .connect({
