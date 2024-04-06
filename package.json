@@ -1,6 +1,6 @@
 {
   "name": "create-deploy-tool",
-  "version": "1.0.20",
+  "version": "1.0.22",
   "description": "to automation deploy your project",
   "main": "index.js",
   "type": "module",
