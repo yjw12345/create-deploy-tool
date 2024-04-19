@@ -1,0 +1,41 @@
+const { generateService } = require('@umijs/openapi');
+const { join } = require('path');
+
+const serverConfig = {
+    severIP: '<%- severIP %>',
+    port: '',
+    groups: [],
+}
+const openapiBasicConfig = {
+    serversPath: './src/api/openapi',
+    requestLibPath: "import { noramlRequest as request } from '@/utils/request/index'",
+    dataFields: ['data'],
+    isCamelCase: false,
+};
+const importList = serverConfig.groups.map(el => (
+    {
+        schemaPath: `http://${basicConfig.severIP}:${basicConfig.port}/v2/api-docs?group=${el}`,
+        projectName: el,
+    }
+))
+
+async function openapiGenerate() {
+    for (const item of importList) {
+        // 在生成接口请求文件，会占用文件系统的资源，导致无法写入，会出现如下报错
+        // [GenSDK] file gen fail: typings.d.ts type: interface
+        // Error: EPERM: operation not permitted,
+        // 解决办法就是睡眠疗法,加个promise和setTimeout
+        // eslint-disable-next-line no-await-in-loop
+        await new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(true);
+            }, 2000);
+        });
+        // eslint-disable-next-line no-await-in-loop
+        await generateService({
+            ...openapiBasicConfig,
+            ...item,
+        });
+    }
+}
+openapiGenerate();

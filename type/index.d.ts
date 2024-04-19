@@ -4,4 +4,5 @@ type ServeInfomation = {
     username?: string
     password?: string
     commit?: boolean
+    openapi?: boolean
 }

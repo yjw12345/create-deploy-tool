@@ -1,12 +1,12 @@
 {
   "name": "create-deploy-tool",
-  "version": "1.1.22",
+  "version": "1.1.24",
   "description": "to automation deploy your project",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "test": "zx ./scripts/build.mjs && zx ./outfile.cjs",
+    "test": "zx ./scripts/build.mjs && zx ./scripts/test.cjs",
     "build": "zx ./scripts/build.mjs",
     "publish-patch": "zx ./scripts/updateVersion.cjs patch && zx ./scripts/build.mjs && npm publish",
     "publish-minor": "zx ./scripts/updateVersion.cjs minor && zx ./scripts/build.mjs && npm publish",

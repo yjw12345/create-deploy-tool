@@ -36,6 +36,11 @@ async function init() {
       type: 'confirm',
       message: '是否需要git自动提交',
     },
+    {
+      name: 'openapi',
+      type: 'confirm',
+      message: '是否需要openapi',
+    },
   ])
   // 获取项目运行地址，和脚本模版地址
   const projectRoot = process.cwd()
@@ -55,6 +60,9 @@ async function init() {
   render('ssh')
   if (result.commit) {
     render('git')
+  }
+  if (result.openapi) {
+    render('openapi')
   }
 
   // 更新依赖
